@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block head%} {% endblock %}
+
+{% block navbar %}
+
+<body style="background-color:rgb(255, 255, 255)">
+
+    <h1 style="color: orange;font-family:cursive;text-align: center;font-size: 50px;">Parkinson's Disease Prediction</h1>
+
+    <form action="/predict" method="POST" enctype="multipart/form-data">
+        <div class="input1">
+            <label for="images" class="drop-container">
+                <span class="drop-title">Drop files here</span>
+                or
+                <input type="file" name="file" id="images" accept="image/*" required>
+            </label>
+            
+        </div> 
+        <br><br>
+        <div class="cen"> 
+        <button type="submit" class="button button2">Predict</button>
+        </div>
+    </form>
+
+    <!-- <form action = "/success" method = "post" enctype="multipart/form-data">  
+        <input type="file" name="file" />  
+        <input type = "submit" value="Upload">  
+    </form>   -->
+
+    <h2 style="color: rgb(7, 73, 33);font-family:cursive;text-align: center;">{{dis}}</h2>
+    
+</body>
+
+{% endblock %}
+
